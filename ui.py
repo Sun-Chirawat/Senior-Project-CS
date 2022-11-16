@@ -26,13 +26,13 @@ def load_data(nrows):
     catg_data = pd.get_dummies(data[['sex', 'smoker', 'region']])
     return data
 
-st.write('''# Improve Predictive Performance Insurance''')
+st.write('''# Improve Predictive Insurance Cost''')
 insur_data = load_data(1000)
 
 # Example dataframe
 df = pd.read_csv('insurance.csv')
-st.subheader('Insurance Data')
-st.write(insur_data)
+# st.subheader('Insurance Data')
+# st.write(insur_data)
 
 
 st.subheader('Trend of Charge by Age')
@@ -46,18 +46,7 @@ st.line_chart(dfline2, x ="bmi" , y= "charges")
 st.info('BMI has trend similar with age as well as when compare with charge. If you have much BMI, you will get more charge of cost because who have higher BMI your health more risk than well.')
 
 
-# dfplot.hist()
-# st.subheader('Overview Infomation')
-# st.pyplot()
-# st.info('From this chart below, most customers have charge less than or equal 10,000$ and there have some customers have to paid cost more than most price of majority.And BMI of most customers less than 30')
-# st.subheader('Trend of Charge by Age')
-# st.line_chart(dfline)
-# st.info('Follow by age, charge has main relation with age in increasing when age of customers has been increase. That mean if you have older age, you will be need more than charge to paid.')
-
-
-
-
-st.sidebar.write('''# fill or select here''')
+st.sidebar.write('''# Please Insert Your Information: ''')
 g_Sex = st.sidebar.radio('Gender :', ['male', 'female'])
 g_Age = st.sidebar.number_input(
     'Age (Year) ', min_value=12, max_value=60, value=20)
@@ -80,26 +69,8 @@ data = {
 }
 
 
-
-# Change the value of sex to be {'M','F','I'} as stored in the trained dataset
-
-# if g_Sex == 'Male':
-#     g_Sex = 'M'
-# elif g_Sex == 'Female':
-#     g_Sex = 'F'
-
-
-# if g_smoke == 'yes' : g_smoke = 'Y'
-# elif  g_smoke == 'no' : g_smoke = 'N'
-
-# if g_region == 'southwest' : g_region = 'SW'
-# elif  g_region == 'southeast' : g_region = 'SE'
-# elif  g_region == 'northwest' : g_region = 'NW'
-# elif  g_region == 'northeast' : g_region = 'NE'
-
-
 df = pd.DataFrame(data, index=[0])
-st.header('Application Improveore Prediction:')
+st.header('Application Improve Prediction:')
 
 st.subheader('User Input:')
 st.write(df)
@@ -143,7 +114,7 @@ load_rgt = pickle.load(open('regression.pkl', 'rb'))
 # Apply model for prediction
 predictionrgt = load_rgt.predict(info)
 # Show the prediction result on the screen
-st.subheader('Insurance Predicted Cost (Model Regression ):')  
+st.subheader('Insurance Predicted Cost ($):')  
 st.write(predictionrgt)
 
 
