@@ -4,7 +4,7 @@ import pandas as pd
 import altair as alt
 import numpy as np
 import io
-import plotly.figure_factory as ff
+
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
