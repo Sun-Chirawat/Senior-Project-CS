@@ -89,9 +89,9 @@ info = info.drop(columns=['sex', 'smoker', 'region'])
 # normal.head()
 
 # -- Reads the saved normalization model
-# load_nor = pickle.load(open('normalization.pkl', 'rb'))
+load_nor = pickle.load(open('normalization.pkl', 'rb'))
 # Apply the normalization model to new data
-# info = load_nor.transform(info)
+info = load_nor.transform(info)
 # Show the X_new data frame on the screen
 # st.subheader('Normalized Input:')
 # st.write(info)
