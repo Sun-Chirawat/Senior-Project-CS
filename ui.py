@@ -1,20 +1,7 @@
 import pickle
 import streamlit as st
 import pandas as pd
-import altair as alt
-import numpy as np
-import io
 
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import LabelEncoder, MinMaxScaler
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.neural_network import MLPRegressor
-from sklearn.model_selection import cross_val_score, GridSearchCV
-from sklearn.preprocessing import MinMaxScaler
 
 st.set_page_config(page_title="Insurance Visualization", page_icon="📊")
 st.set_option('deprecation.showPyplotGlobalUse', False)
